@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Search{% endblock %}
+
+
+{% block body %}
+<h1>searched articles</h1>
+<section class="articles">
+
+    {% for article in articles %}
+<h1>your searched article</h1>
+<a href="{{path('search',{'title':article.title})}}">
+  
+            <h2>{{ article.title }}</h2>
+            </a>
+            <div class="metadata">Ecrit le{{ article.createdAt | date ('d/m/Y')}}  à {{ article.createdAt | date ('H,i')}}dans la section informatique</div>
+            <div class="content">
+                <img src="https://place-hold.it/300x150" alt="">
+               {{ article.content | raw}}
+                <a href="{{path('blog_show',{ 'id': article.id })}}" class="btn btn-primary">lire la suite</a>
+            </div>
+ 
+    {% endfor %}
+   
+
+</section>
+{% endblock %}

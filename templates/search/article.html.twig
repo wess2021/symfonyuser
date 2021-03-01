@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}all your articles{% endblock %}
+
+{% block body %}
+
+  {{ form_start(form)}}
+    
+     {{form_row(form.title)}}
+     <button type ="submit" method="get" class="btn btn-success">chercher</button>
+     {{form_end(form)}}
+
+
+<h1>hello</h1>
+{% endblock %}

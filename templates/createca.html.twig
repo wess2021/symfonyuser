@@ -1,0 +1,16 @@
+{%extends 'base.html.twig'%}
+{% form_theme newCategory 'bootstrap_4_layout.html.twig'%}
+{% block body %}
+<h1>creé votre category</h1>
+{{form_start( newCategory )}}
+
+{{form_row(newCategory.title,{'attr':{'placeholder':"titre de la category"}})}}
+{{form_row(newCategory.description,{'attr':{'placeholder':"contenu de la description"}})}}
+<button type="submit" class="btn btn-success">
+    
+    Ajouter votre category
+ 
+</button>
+
+{{form_end( newCategory )}}
+{% endblock %}
